@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ankit Saini</title>
+<meta name="description" content="Portfolio of Ankit Saini, entry-level DevOps engineer and Linux system administrator from Faridabad, Haryana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Unbounded:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="#top" data-go="top"><i></i>ankit@lab-01</a>
+    <nav class="nl" aria-label="Sections">
+      <a href="#incidents" data-go="incidents">incident room</a>
+      <a href="#projects" data-go="projects">projects</a>
+      <a href="#stack" data-go="stack">stack</a>
+      <a href="#console" data-go="console">console</a>
+      <a href="#contact" data-go="contact">contact</a>
+    </nav>
+    <div class="nr">
+      <button class="kbtn" id="kbtn" type="button" aria-haspopup="dialog">menu <kbd>Ctrl K</kbd></button>
+      <button class="kbtn" id="theme" type="button" aria-label="Switch between light and dark theme">theme</button>
+    </div>
+  </div>
+  <i class="prog" id="prog"></i>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div class="hero-grid">
+      <div>
+        <div class="rise"><span class="pill"><b></b>Open to entry-level DevOps and Linux admin roles</span></div>
+        <h1 class="rise" id="name" aria-label="Ankit Saini"><span id="n1" aria-hidden="true">Ankit</span><span class="l2" id="n2" aria-hidden="true">Saini</span></h1>
+        <p class="role rise"><span>Linux &amp; Kubernetes Administrator</span><em>/</em><span>DevOps Engineer</span></p>
+        <p class="lede rise">I build and break small clusters on purpose. Multi-node Kubernetes with kubeadm, hardened Linux hosts, Dockerised apps and AWS setups with least-privilege IAM, all in hands-on personal projects.</p>
+        <div class="cta rise">
+          <button class="btn pri" type="button" data-go="incidents">Take the pager</button>
+          <button class="btn" type="button" data-go="projects">View projects</button>
+          <button class="btn" type="button" data-go="console">Open the console</button>
+        </div>
+      </div>
+      <div class="topo rise">
+        <div class="topo-bar"><span>cluster / lab map</span><span>● all nodes ready</span></div>
+        <canvas id="topo" role="img" aria-label="Animated map of a Kubernetes cluster: an ingress, a control plane and four worker nodes exchanging traffic."></canvas>
+        <p class="topo-cap" id="topo-cap"><b>Illustrative topology.</b> Hover or tap a node to see what it does.</p>
+      </div>
+    </div>
+    <div class="tele">
+      <div><small>Local time</small><b id="clock">Faridabad</b></div>
+      <div><small>Education</small><b>BCA 2025, MDU Rohtak</b></div>
+      <div><small>Experience</small><b>Fresher, 4 hands-on labs</b></div>
+      <div><small>Try this</small><b>Click the background mesh for a pulse. Hover the name.</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="incidents">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">on-call simulator</span>
+      <h2>Take the pager</h2>
+      <p>Four incidents, each one replaying a lab I ran. Pick the right command at each step. Picks that would hurt production cost error budget. These are simulations written from my lab work, not real outages.</p>
+    </div>
+    <div class="room">
+      <div class="inc-list" id="inclist" aria-label="Incidents"></div>
+      <div>
+        <div class="con">
+          <div class="pager" id="pager"></div>
+          <div class="screen" id="screen" role="log" aria-live="polite" tabindex="0"></div>
+          <div class="choices" id="choices"></div>
+        </div>
+        <div class="room-foot"><span>Tip: press 1 to 4 to pick an option.</span><button class="linkbtn" id="reset" type="button">Reset the game</button></div>
+        <div class="clear" id="allclear" hidden>
+          <div>
+            <span class="eyebrow">all clear</span>
+            <h3 id="clear-t">Four of four resolved</h3>
+            <p id="clear-p"></p>
+          </div>
+          <div class="cta"><button class="btn pri" type="button" data-go="contact">Contact Ankit</button><button class="btn" type="button" data-go="projects">See the projects</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">kubectl get projects</span>
+      <h2>Four projects, each one a lab I built end to end</h2>
+      <p>All personal projects. Pick one to read its manifest and what I practiced. A check mark means you resolved its incident.</p>
+    </div>
+    <div class="proj">
+      <div class="plist" id="plist"></div>
+      <article class="pdetail" id="pdetail" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">stack layers</span>
+      <h2>From the kernel up to the cloud</h2>
+      <p>Move across the model to tilt it. Slide to pull the layers apart. Select a layer to see its tools and the incidents that use it.</p>
+    </div>
+    <div class="stackwrap">
+      <div class="scene" id="scene" role="group" aria-label="Exploded 3D model of the skill stack, bottom layer Linux, top layer Automation and Monitoring"><div class="rig" id="rig"></div></div>
+      <div class="sp">
+        <div class="slider"><label for="explode">Assemble</label><input id="explode" type="range" min="0" max="100" value="62"><span>Explode</span></div>
+        <ul class="llist" id="llist"></ul>
+        <div class="ldetail glow" id="ldetail" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="shelf">
+      <h3>The full tool list</h3>
+      <div class="stack" id="stackgrid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="console">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">interactive</span>
+      <h2>Ask the console</h2>
+      <p>A small terminal that answers from my resume. Type a command or tap a chip.</p>
+    </div>
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span>ankit@lab-01: ~</span></div>
+      <div class="tout" id="tout" role="log" aria-live="polite" tabindex="0"></div>
+      <form class="tin" id="tf" autocomplete="off">
+        <label for="cmd">$</label>
+        <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="type help and press enter" aria-label="Terminal command">
+      </form>
+      <div class="tchips" id="tchips"></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">background</span><h2>Education</h2></div>
+    <div class="edu">
+      <article><span class="yr">2025</span><h3>Bachelor of Computer Applications (BCA)</h3><p>Maharshi Dayanand University (MDU), Rohtak</p></article>
+      <article><span class="yr">2022</span><h3>Class XII, Science</h3><p>HBSE Board</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="pagecard">
+      <div class="pc-top"><span class="sev warn" id="pc-sev">TRIGGERED</span><span>INC-005</span><span>Hiring</span><span>Assigned to you</span></div>
+      <h2>Hiring for DevOps or Linux administration? Write to me.</h2>
+      <div class="ack"><button class="btn pri" type="button" id="ack">Acknowledge page</button><p id="ack-p">Entry-level DevOps and Linux administrator roles, Delhi NCR.</p></div>
+      <div class="cgrid">
+        <div class="crow"><div><small>Email</small><span id="v-mail">ankitgahlot958@gmail.com</span></div><button class="copy" type="button" data-copy="v-mail">Copy</button></div>
+        <div class="crow"><div><small>Phone</small><span id="v-tel">+91-8700307602</span></div><button class="copy" type="button" data-copy="v-tel">Copy</button></div>
+      </div>
+      <p class="loc">Faridabad, Haryana. Fresher, ready for on-site or hybrid roles in Delhi NCR.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Ankit Saini · Linux &amp; Kubernetes Administrator | DevOps Engineer</span><span>Press Ctrl K for the menu</span></div></footer>
+
+<div class="pal" id="pal" hidden>
+  <div class="pal-box" role="dialog" aria-modal="true" aria-label="Menu">
+    <input id="palq" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type to jump anywhere, or run an action" aria-label="Search the menu">
+    <ul id="pall" role="listbox" aria-label="Results"></ul>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>
